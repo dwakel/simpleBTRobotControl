@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="RobotZ.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RobotZ"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <!--<Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel VerticalAlignment="Center" Grid.Column="0" HorizontalAlignment="Center">
+            <Button Name="On" Content="ON" Height="70" Width="150" Click="On_Click"/>
+            <Button Name="SelfDriven" Content="Autonomous" Height="70" Width="150" Click="SelfDriven_Click"/>
+            <Button Name="btn_Speech" Content="Speak"  Height="70" Width="150" Click="btn_Speech_Click"/>
+
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Vertical">
+            <Button Name="Forward" Content="Forward" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,30" Click="Forward_Click" KeyDown="Key_KeyDown"/>
+            <Button Name="Backward" Content="Reverse" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,30" Click="Backward_Click" KeyDown="Key_KeyDown"/>
+            <Button Name="Left" Content="Left" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,30" Click="Left_Click" KeyDown="Key_KeyDown"/>
+            <Button Name="Right" Content="Right" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,30" Click="Right_Click" KeyDown="Key_KeyDown"/>
+            <Button Name="Stop" Content="Stop" HorizontalAlignment="Stretch" Height="100" Margin="0,00,0,30" Click="Stop_Click"/>
+        </StackPanel>
+
+        <TextBlock Name="DirectionLabel" Grid.Column="2" FontSize="35" Foreground="Green" Text="{Binding MovementDirection, Mode=TwoWay}"/>
+         </Grid>
+</Page>
